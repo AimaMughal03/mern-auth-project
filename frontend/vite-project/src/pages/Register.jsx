@@ -35,6 +35,7 @@ function Register() {
       <input type="email" name='email' placeholder='email' onChange={handleChange} />
       <input type="password" name='password' placeholder='password' onChange={handleChange} />
       <button onClick={handleSubmit}>Register</button>
+      <button onClick={() => navigate('/login')}>Login Here</button>
     </div>
   )
 }

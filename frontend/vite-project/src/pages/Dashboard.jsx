@@ -37,7 +37,7 @@ function Dashboard() {
   return (
     <div className='container'>
       <h1>Dashboard</h1>
-      <button onClick={handleLogout}>Logout</button>
+      
 
       {users.map((u) => (
         <div className='user' key={u._id}>
@@ -47,6 +47,8 @@ function Dashboard() {
 
         </div>
       ))}
+
+      <button onClick={handleLogout}>Logout</button>
     </div>
   )
 }

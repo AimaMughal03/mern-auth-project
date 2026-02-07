@@ -3,7 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+}
+
+body{
+    background: linear-gradient(purple, black, purple);
+
 }
 
 
@@ -14,12 +18,15 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 2px solid white;
+    box-shadow: 5px 5px 20px white;
+    
 
 }
 
 h1{
     text-align: center;
+    color: white;
 }
 
 input{
@@ -27,6 +34,11 @@ input{
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    box-shadow: 2px 2px 5px white;
+}
+
+input:focus{
+    transform: scale(1.025);
 }
 
 button{
@@ -36,6 +48,10 @@ button{
     cursor: pointer;
     transition: 0.2s;
     margin-top: 8px;
+    background-color: purple;
+    box-shadow: inset -2px -2px 8px white;
+    color: white;
+    font-weight: 500;
 }
 
 button:hover{
@@ -45,6 +61,9 @@ button:hover{
 .user{
     padding: 15px;
     margin: 10px ;
-    width: 350px;
+    width: 330px;
     border-radius: 6px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 10px white;
+    color: white;
 }
