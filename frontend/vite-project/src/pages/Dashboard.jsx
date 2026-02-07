@@ -41,9 +41,8 @@ function Dashboard() {
 
       {users.map((u) => (
         <div className='user' key={u._id}>
-
-            <h3>{u.username}</h3>
-            <h3>{u.email}</h3>
+            <p>{u.username}</p>
+            <p>{u.email}</p>
 
         </div>
       ))}
