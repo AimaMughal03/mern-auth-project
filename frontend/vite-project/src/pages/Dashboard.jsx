@@ -22,7 +22,7 @@ function Dashboard() {
 
                 const token = localStorage.getItem("token");
 
-                const res = await axios.get("http://localhost:5000/api/v1/user/getUser", { headers:{Authorization:token}})
+                const res = await axios.get("http://mern-auth-project-85x2.vercel.app/api/v1/user/getUser", { headers:{Authorization:token}})
                 
                 setUsers(res.data.data);
             } 
