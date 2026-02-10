@@ -17,7 +17,7 @@ function Register() {
         const handleSubmit = async () => {
 
         try {
-        const res = await axios.post("http://mern-auth-project-85x2.vercel.app/api/v1/user/register",form);
+        const res = await axios.post("https://mern-auth-project-85x2.vercel.app/api/v1/user/register",form);
         alert(res.data.message);
         navigate('/login')
         }
