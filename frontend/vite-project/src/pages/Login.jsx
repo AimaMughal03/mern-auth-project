@@ -17,7 +17,7 @@ function Login(){
     const handleSubmit = async() => {
 
         try {
-            const res = await axios.post("https://mern-auth-project-85x2.vercel.app/api/v1/user/login", form);
+            const res = await axios.post("https://mern-auth-project-backend-seven.vercel.app/api/v1/user/login", form);
 
             localStorage.setItem("token", res.data.token);
 
