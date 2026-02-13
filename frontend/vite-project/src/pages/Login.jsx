@@ -28,6 +28,7 @@ function Login(){
         } 
         catch (error) {
             alert("Invalid email or password");
+            console.log(error);
         }
     }
 
