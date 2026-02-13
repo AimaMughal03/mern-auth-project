@@ -70,6 +70,8 @@ button:hover{
     border: 2px solid white;
     box-shadow: 2px 2px 10px white;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 480px){
