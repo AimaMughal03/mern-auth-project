@@ -92,7 +92,7 @@ function Dashboard() {
                         <h3 style={{textDecoration: task.completed?"line-through":"none"}}>{task.title}</h3>
                         <p>{task.description}</p>
 
-                        <button onClick={() => completeTask(task._id)}>Mark Done</button>
+                        <input type="checkbox" checked={task.completed} onClick={() => completeTask(task._id)} />
                         <button onClick={() => deleteTask(task._id)}>Delete</button>
 
                         
