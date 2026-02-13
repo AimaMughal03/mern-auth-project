@@ -21,6 +21,7 @@ exports.register = async(req, res) => {
         const {error} = schema.validate(req.body);
 
         if(error){
+             console.error("Register Error:", error);
             return res.status(400).send({
                 isSuccess: false,
                 message: error.details[0].message
