@@ -72,7 +72,9 @@ function Dashboard() {
 
 
     return(
-        <div className="container">
+        <div >
+
+            <div className="container">
             <h1>To-Do App</h1>
 
             <input type="text" placeholder="Task title" value={title} 
@@ -84,6 +86,7 @@ function Dashboard() {
             />
 
             <button onClick={createTasks}>Add Task</button>
+            </div>
 
             {
                 tasks.map((task) => (
