@@ -80,23 +80,24 @@ function Dashboard() {
         <div >
 
             <div className="container">
-            <h1>To-Do App</h1>
+                <h1>To-Do App</h1>
 
-            <input type="text" placeholder="Task title" value={title} 
-            onChange={(e) => setTitle(e.target.value)}
-            />
+                <input type="text" placeholder="Task title" value={title} 
+                onChange={(e) => setTitle(e.target.value)}
+                />
 
-            <input type="text" placeholder="Task description" value={description} 
-            onChange={(e) => setDescription(e.target.value)}
-            />
+                <input type="text" placeholder="Task description" value={description} 
+                onChange={(e) => setDescription(e.target.value)}
+                />
 
-            <button onClick={createTasks}>Add Task</button>
+                <button onClick={createTasks}>Add Task</button>
+                <button onClick={handleLogout}>Logout</button>
             </div>
 
-            <div className='container'>
+            
                 {
                     tasks.map((task) => (
-                        <div key={task._id} className='user'>
+                        <div key={task._id} className='container'>
                             
                             <h3 style={{textDecoration: task.completed?"line-through":"none"}}>{task.title}</h3>
                             <p>{task.description}</p>
@@ -111,9 +112,9 @@ function Dashboard() {
                     ))
                 }
 
-                <button onClick={handleLogout}>Logout</button>
+                
 
-            </div>
+            
 
         </div>
     )
