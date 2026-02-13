@@ -47,7 +47,7 @@ function Dashboard() {
         }
     }
 
-    const deleteTask = async() => {
+    const deleteTask = async(id) => {
         try {
             
             await axios.delete(`https://mern-auth-project-backend-seven.vercel.app/api/v1/task/${id}`, {headers:{Authorization:token}});
@@ -59,7 +59,7 @@ function Dashboard() {
         }
     }
 
-    const completeTask = async() => {
+    const completeTask = async(id) => {
         
         await axios.patch(`https://mern-auth-project-backend-seven.vercel.app/api/v1/task/completed/${id}`,
             {},
@@ -92,8 +92,8 @@ function Dashboard() {
                         <h3 style={{textDecoration: task.completed?"line-through":"none"}}>{task.title}</h3>
                         <p>{task.description}</p>
 
-                        <button onClick={completeTask(task._id)}>Mark Done</button>
-                        <button onClick={deleteTask(task._id)}>Delete</button>
+                        <button onClick={() => completeTask(task._id)}>Mark Done</button>
+                        <button onClick={() => deleteTask(task._id)}>Delete</button>
 
                         
                     </div>
