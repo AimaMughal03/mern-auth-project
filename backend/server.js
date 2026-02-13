@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors({
     origin: "https://mern-auth-project-frontend.vercel.app",
-    methods: ["GET, POST", "DELETE", "PATCH"],
+    methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
