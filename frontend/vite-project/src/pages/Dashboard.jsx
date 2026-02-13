@@ -9,7 +9,7 @@ function Dashboard() {
     const [tasks, setTasks] = useState([]);
     const [title, setTitle]= useState("");
     const [description, setDescription] = useState("");
-
+    const navigate = useNavigate();
     const token = localStorage.getItem("token");
 
     useEffect(() => {
@@ -70,6 +70,11 @@ function Dashboard() {
         
     }
 
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/login");
+    }
+
 
     return(
         <div >
@@ -88,22 +93,27 @@ function Dashboard() {
             <button onClick={createTasks}>Add Task</button>
             </div>
 
-            {
-                tasks.map((task) => (
-                    <div key={task._id} className='user'>
-                        
-                        <h3 style={{textDecoration: task.completed?"line-through":"none"}}>{task.title}</h3>
-                        <p>{task.description}</p>
+            <div className='container'>
+                {
+                    tasks.map((task) => (
+                        <div key={task._id} className='user'>
+                            
+                            <h3 style={{textDecoration: task.completed?"line-through":"none"}}>{task.title}</h3>
+                            <p>{task.description}</p>
 
-                        <button onClick={() => completeTask(task._id)}>Mark Done</button>
-                        <button onClick={() => deleteTask(task._id)}>Delete</button>
+                            <button onClick={() => completeTask(task._id)}>Mark Done</button>
+                            <button onClick={() => deleteTask(task._id)}>Delete</button>
 
-                        
-                    </div>
+                            
+                        </div>
 
 
-                ))
-            }
+                    ))
+                }
+
+                <button onClick={handleLogout}>Logout</button>
+
+            </div>
 
         </div>
     )
