@@ -8,4 +8,4 @@ function ProtectedRoute() {
     return isLoggedIn? <Outlet/> : <Navigate to="/login"/>
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;

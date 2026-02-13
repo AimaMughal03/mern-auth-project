@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const auth = require("./middleware/auth");
 
 const PORT = process.env.PORT || 5000;
 
@@ -15,11 +16,12 @@ mongoose.connect(process.env.MONGO_URI)
 .catch(error => console.log(error));
 
 const user = require('./routes/user');
+const task = require('./routes/task');
 
 app.use('/api/v1/user', user);
+app.use('/api/v1/task', auth,  task)
 
 module.exports = app;
 
 // app.listen(PORT, () => {
 //     console.log(`server is up on PORT:${PORT}`);
-// })

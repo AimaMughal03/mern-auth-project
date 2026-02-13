@@ -30,7 +30,7 @@ exports.register = async(req, res) => {
 
         const findUser = await User.findOne({
             $or: [{ email}, {username}]
-        })
+        }) 
 
         if(findUser){
             return res.status(409).send({
