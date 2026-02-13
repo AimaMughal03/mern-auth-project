@@ -72,7 +72,7 @@ function Dashboard() {
 
 
     return(
-        <div className='container'>
+        <div className="container">
             <h1>To-Do App</h1>
 
             <input type="text" placeholder="Task title" value={title} 
