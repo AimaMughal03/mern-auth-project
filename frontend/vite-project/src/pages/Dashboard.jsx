@@ -98,7 +98,7 @@ function Dashboard() {
             
                 {
                     tasks.map((task) => (
-                        <div key={task._id} className="user">
+                        <div key={task._id} className="container">
                             
                             <h3 style={{textDecoration: task.completed?"line-through":"none"}}>{task.title}</h3>
                             <p>{task.description}</p>
