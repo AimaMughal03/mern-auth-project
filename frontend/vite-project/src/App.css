@@ -25,6 +25,17 @@ body{
 
 }
 
+.user{
+    padding: 15px;
+    margin: 10px ;
+    width: 90%;
+    max-width: 330px;
+    border-radius: 6px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 10px white;
+    color: white;
+}
+
 h1{
     text-align: center;
     color: white;
@@ -61,16 +72,7 @@ button:hover{
     transform: scale(1.05);
 }
 
-.user{
-    padding: 15px;
-    margin: 10px ;
-    width: 90%;
-    max-width: 330px;
-    border-radius: 6px;
-    border: 2px solid white;
-    box-shadow: 2px 2px 10px white;
-    color: white;
-}
+
 
 @media (max-width: 480px){
 
