@@ -5,6 +5,7 @@ const joi = require('joi');
 const SECRET = process.env.SECRET;
 
 const User = require("../models/user");
+const cloudinary = require("../config/cloudinary")
 
 exports.register = async(req, res) => {
 
@@ -45,7 +46,13 @@ exports.register = async(req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        const user = new User({username, email, password:hashedPassword});
+        let imageURL = "";
+        if(req.file){
+            const result = await cloudinary.uploader.upload(req.file.path);
+            imageURL = result.secure_url;
+        }
+
+        const user = new User({username, email, password:hashedPassword, profilePicture:imageURL});
 
         await user.save();
 
@@ -111,7 +118,8 @@ exports.login = async(req, res) => {
 
     res.send({
         isSuccess:true,
-        token
+        token,
+        user:findUser
     })
 }
 

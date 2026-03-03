@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://mern-auth-project-frontend.vercel.app",
+    origin: process.env.frontend_URI,
     methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -25,7 +25,8 @@ const task = require('./routes/task');
 app.use('/api/v1/user', user);
 app.use('/api/v1/task', auth,  task)
 
-module.exports = app;
+ module.exports = app;
 
-// app.listen(PORT, () => {
-//     console.log(`server is up on PORT:${PORT}`);
+//  app.listen(PORT, () => {
+//      console.log(`server is up on PORT:${PORT}`);
+//  })

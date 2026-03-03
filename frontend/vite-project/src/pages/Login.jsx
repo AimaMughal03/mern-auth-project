@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
 
 function Login(){
@@ -15,11 +15,12 @@ function Login(){
     }
 
     const handleSubmit = async() => {
-
+ 
         try {
-            const res = await axios.post("https://mern-auth-project-backend-seven.vercel.app/api/v1/user/login", form);
-
+            const res = await api.post("/user/login", form);
             localStorage.setItem("token", res.data.token);
+
+            localStorage.setItem("user", JSON.stringify(res.data.user));
 
             navigate('/dashboard');
 
