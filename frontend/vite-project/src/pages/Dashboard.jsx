@@ -21,7 +21,7 @@ function Dashboard() {
     const fetchTasks = async() => {
         try {
 
-            const res = await api.get("/task/")
+            const res = await api.get("/task/");
             setTasks(res.data.data);
         } 
         catch (error) {
