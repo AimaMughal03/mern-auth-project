@@ -12,7 +12,7 @@ exports.createTask = async(req, res) => {
 
     res.send({
         isSuccess: true,
-        message:"Task added"
+        message:"Task added",
     })
 }
 
@@ -28,7 +28,7 @@ exports.getTask = async(req, res) => {
         return res.send({
             isSuccess: true,
             message:"cached data",
-            data: JSON.parse(cachedTasks)
+            data: JSON.parse(cachedTasks),
         })
     }
 
