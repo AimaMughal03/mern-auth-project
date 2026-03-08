@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://mern-auth-project-yigx-d47uum11b-aima-mughals-projects.vercel.app",
+    origin: process.env.frontend_URI,
     methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
